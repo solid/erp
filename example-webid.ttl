@@ -1,0 +1,5 @@
+@prefix dfc-b: <https://github.com/datafoodconsortium/ontology/releases/latest/download/DFC_BusinessOntology.owl#>.
+
+<>
+    a dfc-b:Enterprise;
+    dfc-b:name "My enterprise".
