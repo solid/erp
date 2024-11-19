@@ -1,0 +1,111 @@
+<pre class='metadata'>
+Title: Solid ERP
+Shortname: solid-erp
+Level: 1
+Status: CG-DRAFT
+Group: solidcg
+Repository: solid/erp
+URL: http://example.com/url-this-spec-will-live-at
+Editor: Maxime Lecoq-Gaillard
+Abstract: This work-in-progress Solid client-client protocol defines objects and rules to make interoperable apps to manage a business or enterprise.
+Complain About: accidental-2119 yes, missing-example-ids yes
+Markup Shorthands: markdown yes, css no
+</pre>
+
+<pre class="biblio">
+{
+  "webid": {
+    "href": "https://www.w3.org/2005/Incubator/webid/spec/identity/",
+    "title": "WebID 1.0",
+    "authors": [
+        "Tim Berners-Lee",
+        "Henry Story",
+        "Andrei Sambra"
+    ]
+  },
+  "solid-webid-profile": {
+    "href": "https://solid.github.io/webid-profile/",
+    "title": "Solid WebID Profile",
+    "authors": [
+        "Tim Berners-Lee", 
+        "Sarven Capadisli",
+        "Virginia Balseiro",
+        "Timea Turdean",
+        "Jeff Zucker"
+    ]
+  },
+  "type-indexes": {
+    "href": "https://solid.github.io/type-indexes/",
+    "title": "Type indexes",
+    "contributors": [
+        "Tim Berners-Lee",
+        "Sarven Capadisli",
+        "Virginia Balseiro",
+        "Jeff Zucker"
+    ]
+  }
+}
+</pre>
+
+Caution {#caution}
+=====================
+
+This work is just starting and should not considered validated by the community.
+
+# Terminology # {#terminology}
+
+## Namespaces ## {#namespaces}
+
+<table>
+    <tr>
+        <th>Prefix</th>
+        <th>Namespace</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>rdf</td>
+        <td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td>
+        <td>[[!rdf-schema]]</td>
+    </tr>
+    <tr>
+        <td>foaf</td>
+        <td>http://xmlns.com/foaf/0.1/</td>
+        <td>[[!foaf]]</td>
+    </tr>
+    <tr>
+        <td>dfc-b</td>
+        <td>https://github.com/datafoodconsortium/ontology/releases/latest/download/DFC_BusinessOntology.owl#</td>
+        <td>[Data Food Consortium ontology](https://github.com/datafoodconsortium/ontology)</td>
+    </tr>
+</table>
+
+Enterprise {#enterprise}
+========================
+
+A Solid enterprise is a object in a Solid storage (or POD) which holds data about 
+an entity producing, buying, or selling products like goods and services.
+
+A Solid enterprise is all built inside a single folder (LDP Container) in a Solid storage. 
+Let us call the URI of that folder -- less its final '/' -- `$ROOT`. 
+It could be say, *https://alice.example.org/enterprise/*. Developers must never make assumptions 
+about where a Solid enterprise is stored as users should be able to choose the location they want.
+
+The enterprise object is defined in the `$ROOT/index` document. The RDF type of the enterprise is `dfc-b:Enterprise`. 
+
+<div id="example-webid" class="example" heading="An enterprise document in turtle">
+    <pre class="include-code">
+        path: ./example-webid.ttl
+        highlight: turtle
+    </pre>
+</div>
+
+Other properties can be defined like listed in the enterprise shape below (TBD).
+
+## Access rights ## {#enterprise-access-rights}
+
+By default, the enterprise container is private. When one wants to make the enterprise public, private properties can still be defined in a separated private document, let's says `$ROOT/index-private`, linked with the public `$ROOT/index` document using the `rdfs:seeAlso` predicate.
+
+## Discovery ## {#enterprise-discovery}
+
+Type indexes is the recommended mechanism to discover Solid enterprises. The RDF class to register an instance of a Solid enterprise is `dfc-b:Enterprise`. Type indexes MUST only register the enterprises owned by the WebId owner. See [[!type-indexes]].
+
