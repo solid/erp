@@ -2,7 +2,7 @@
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Solid ERP</title>
+  <title>Solid Goods and Services</title>
   <meta content="CG-DRAFT" name="w3c-status">
   <link href="https://www.w3.org/StyleSheets/TR/2021/cg-draft" rel="stylesheet">
   <meta content="Bikeshed version 742f3d674, updated Mon Nov 4 14:56:54 2024 -0800" name="generator">
@@ -289,10 +289,69 @@ a.self-link::before            { content: "¶"; }
 .heading > a.self-link::before { content: "§"; }
 dfn > a.self-link::before      { content: "#"; }
 </style>
+<style>/* Boilerplate: style-syntax-highlighting */
+code.highlight { padding: .1em; border-radius: .3em; }
+pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em 0; overflow: auto; border-radius: 0; }
+
+.highlight:not(.idl) { background: rgba(0, 0, 0, .03); }
+c-[a] { color: #990055 } /* Keyword.Declaration */
+c-[b] { color: #990055 } /* Keyword.Type */
+c-[c] { color: #708090 } /* Comment */
+c-[d] { color: #708090 } /* Comment.Multiline */
+c-[e] { color: #0077aa } /* Name.Attribute */
+c-[f] { color: #669900 } /* Name.Tag */
+c-[g] { color: #222222 } /* Name.Variable */
+c-[k] { color: #990055 } /* Keyword */
+c-[l] { color: #000000 } /* Literal */
+c-[m] { color: #000000 } /* Literal.Number */
+c-[n] { color: #0077aa } /* Name */
+c-[o] { color: #999999 } /* Operator */
+c-[p] { color: #999999 } /* Punctuation */
+c-[s] { color: #a67f59 } /* Literal.String */
+c-[t] { color: #a67f59 } /* Literal.String.Single */
+c-[u] { color: #a67f59 } /* Literal.String.Double */
+c-[cp] { color: #708090 } /* Comment.Preproc */
+c-[c1] { color: #708090 } /* Comment.Single */
+c-[cs] { color: #708090 } /* Comment.Special */
+c-[kc] { color: #990055 } /* Keyword.Constant */
+c-[kn] { color: #990055 } /* Keyword.Namespace */
+c-[kp] { color: #990055 } /* Keyword.Pseudo */
+c-[kr] { color: #990055 } /* Keyword.Reserved */
+c-[ld] { color: #000000 } /* Literal.Date */
+c-[nc] { color: #0077aa } /* Name.Class */
+c-[no] { color: #0077aa } /* Name.Constant */
+c-[nd] { color: #0077aa } /* Name.Decorator */
+c-[ni] { color: #0077aa } /* Name.Entity */
+c-[ne] { color: #0077aa } /* Name.Exception */
+c-[nf] { color: #0077aa } /* Name.Function */
+c-[nl] { color: #0077aa } /* Name.Label */
+c-[nn] { color: #0077aa } /* Name.Namespace */
+c-[py] { color: #0077aa } /* Name.Property */
+c-[ow] { color: #999999 } /* Operator.Word */
+c-[mb] { color: #000000 } /* Literal.Number.Bin */
+c-[mf] { color: #000000 } /* Literal.Number.Float */
+c-[mh] { color: #000000 } /* Literal.Number.Hex */
+c-[mi] { color: #000000 } /* Literal.Number.Integer */
+c-[mo] { color: #000000 } /* Literal.Number.Oct */
+c-[sb] { color: #a67f59 } /* Literal.String.Backtick */
+c-[sc] { color: #a67f59 } /* Literal.String.Char */
+c-[sd] { color: #a67f59 } /* Literal.String.Doc */
+c-[se] { color: #a67f59 } /* Literal.String.Escape */
+c-[sh] { color: #a67f59 } /* Literal.String.Heredoc */
+c-[si] { color: #a67f59 } /* Literal.String.Interpol */
+c-[sx] { color: #a67f59 } /* Literal.String.Other */
+c-[sr] { color: #a67f59 } /* Literal.String.Regex */
+c-[ss] { color: #a67f59 } /* Literal.String.Symbol */
+c-[vc] { color: #0077aa } /* Name.Variable.Class */
+c-[vg] { color: #0077aa } /* Name.Variable.Global */
+c-[vi] { color: #0077aa } /* Name.Variable.Instance */
+c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
+
+</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
-   <h1 class="p-name no-ref" id="title">Solid ERP</h1>
+   <h1 class="p-name no-ref" id="title">Solid Goods and Services</h1>
    <p id="w3c-state"><a href="https://www.w3.org/standards/types/#CG-DRAFT">Draft Community Group Report</a>, <time class="dt-updated" datetime="2024-11-27">27 November 2024</time></p>
    <details open>
     <summary>More details about this document</summary>
@@ -309,7 +368,7 @@ dfn > a.self-link::before      { content: "#"; }
    </details>
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright">
-    <p> Copyright © 2024 the Contributors to the Solid ERP,
+    <p> Copyright © 2024 the Contributors to the Solid Goods and Services,
   published by the <a href="https://www.w3.org/community/solid/">Solid Community Group</a> under the <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>.
   A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/">summary</a> is available. </p>
    </p>
@@ -317,7 +376,7 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>This work-in-progress Solid client-client set of protocols defines objects and rules to make interoperable apps to manage the activities of en entity that provides goods and/or services like a business or enterprise.</p>
+   <p>This document is a Solid client-client protocol defining products and services stored in a Solid storage.</p>
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="sotd"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -331,18 +390,22 @@ dfn > a.self-link::before      { content: "#"; }
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
-    <li><a href="#caution"><span class="secno">1</span> <span class="content">Caution</span></a>
     <li>
-     <a href="#terminology"><span class="secno">2</span> <span class="content">Terminology</span></a>
+     <a href="#terminology"><span class="secno">1</span> <span class="content">Terminology</span></a>
      <ol class="toc">
-      <li><a href="#namespaces"><span class="secno">2.1</span> <span class="content">Namespaces</span></a>
+      <li><a href="#namespaces"><span class="secno">1.1</span> <span class="content">Namespaces</span></a>
      </ol>
     <li>
-     <a href="#goods-services-provider"><span class="secno">3</span> <span class="content">Goods/services provider</span></a>
+     <a href="#generalities"><span class="secno">2</span> <span class="content">Generalities</span></a>
      <ol class="toc">
-      <li><a href="#enterprise-access-rights"><span class="secno">3.1</span> <span class="content">Access rights</span></a>
-      <li><a href="#enterprise-discovery"><span class="secno">3.2</span> <span class="content">Discovery</span></a>
+      <li><a href="#product-access-rights"><span class="secno">2.1</span> <span class="content">Access rights</span></a>
+      <li><a href="#product-discovery"><span class="secno">2.2</span> <span class="content">Discovery</span></a>
      </ol>
+    <li><a href="#functional-products"><span class="secno">3</span> <span class="content">Functional products</span></a>
+    <li><a href="#technical-products"><span class="secno">4</span> <span class="content">Technical products</span></a>
+    <li><a href="#supplied-products"><span class="secno">5</span> <span class="content">Supplied products</span></a>
+    <li><a href="#localized-products"><span class="secno">6</span> <span class="content">Localized products</span></a>
+    <li><a href="#physical-products"><span class="secno">7</span> <span class="content">Physical products</span></a>
     <li>
      <a href="#w3c-conformance"><span class="secno"></span> <span class="content">Conformance</span></a>
      <ol class="toc">
@@ -352,14 +415,13 @@ dfn > a.self-link::before      { content: "#"; }
      <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
      <ol class="toc">
       <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
+      <li><a href="#informative"><span class="secno"></span> <span class="content">Informative References</span></a>
      </ol>
    </ol>
   </nav>
   <main>
-   <h2 class="heading settled" data-level="1" id="caution"><span class="secno">1. </span><span class="content">Caution</span><a class="self-link" href="#caution"></a></h2>
-   <p>This work is an active draft and should not be considered validated by the community.</p>
-   <h2 class="heading settled" data-level="2" id="terminology"><span class="secno">2. </span><span class="content">Terminology</span><a class="self-link" href="#terminology"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="namespaces"><span class="secno">2.1. </span><span class="content">Namespaces</span><a class="self-link" href="#namespaces"></a></h3>
+   <h2 class="heading settled" data-level="1" id="terminology"><span class="secno">1. </span><span class="content">Terminology</span><a class="self-link" href="#terminology"></a></h2>
+   <h3 class="heading settled" data-level="1.1" id="namespaces"><span class="secno">1.1. </span><span class="content">Namespaces</span><a class="self-link" href="#namespaces"></a></h3>
    <table>
     <tbody>
      <tr>
@@ -379,13 +441,40 @@ dfn > a.self-link::before      { content: "#"; }
       <td>https://github.com/datafoodconsortium/ontology/releases/latest/download/DFC_BusinessOntology.owl#
       <td><a href="https://github.com/datafoodconsortium/ontology">Data Food Consortium ontology</a>
    </table>
-   <h2 class="heading settled" data-level="3" id="goods-services-provider"><span class="secno">3. </span><span class="content">Goods/services provider</span><a class="self-link" href="#goods-services-provider"></a></h2>
-   <p>The Solid Goods/Services Provider (GSP) <a data-link-type="biblio" href="#biblio-solid-gsp" title="Solid GSP">[solid-gsp]</a> is a object in a Solid storage which holds data
-about an entity that provides goods and/or services.</p>
-   <h3 class="heading settled" data-level="3.1" id="enterprise-access-rights"><span class="secno">3.1. </span><span class="content">Access rights</span><a class="self-link" href="#enterprise-access-rights"></a></h3>
-   <p>By default, the GSP container is private. When one wants to make the GSP public, private properties can still be defined in a separated private document, let’s says <code>$ROOT/index-private</code>, linked with the public <code>$ROOT/index</code> document using the <code>rdfs:seeAlso</code> predicate.</p>
-   <h3 class="heading settled" data-level="3.2" id="enterprise-discovery"><span class="secno">3.2. </span><span class="content">Discovery</span><a class="self-link" href="#enterprise-discovery"></a></h3>
-   <p>Type indexes is the recommended mechanism to discover Solid GSP. The RDF class to register an instance of a Solid GSP is <code>dfc-b:Enterprise</code>. Type indexes MUST only register the GSPs owned by the WebId owner. See <a data-link-type="biblio" href="#biblio-type-indexes" title="Type indexes">[type-indexes]</a>.</p>
+   <h2 class="heading settled" data-level="2" id="generalities"><span class="secno">2. </span><span class="content">Generalities</span><a class="self-link" href="#generalities"></a></h2>
+   <p>A Solid product is a object in a Solid storage (or POD) which holds data about
+a product that can be provided by a Goods/Services Provider (GSP), see <a data-link-type="biblio" href="#biblio-solid-gsp" title="Solid GSP">[solid-gsp]</a>.</p>
+   <p>There are different types of products: <a href="#functional-products">§ 3 Functional products</a>, <a href="#technical-products">§ 4 Technical products</a>, <a href="#supplied-products">§ 5 Supplied products</a>, <a href="#localized-products">§ 6 Localized products</a> and <a href="#physical-products">§ 7 Physical products</a>.</p>
+   <p>Solid products are all built inside a single folder (LDP Container) in a Solid storage.
+Let us call the URI of that folder -- less its final '/' -- <code>$ROOT</code>. 
+It could be say, <em>https://alice.example.org/myProduct/</em>. Developers must never make assumptions 
+about where a Solid product is stored as users should be able to choose the location they want.</p>
+   <p>The product object is defined in the <code>$ROOT/index</code> document.</p>
+   <h3 class="heading settled" data-level="2.1" id="product-access-rights"><span class="secno">2.1. </span><span class="content">Access rights</span><a class="self-link" href="#product-access-rights"></a></h3>
+   <p>By default, the products container are private. When one wants to make a product public, private properties can still be defined in a separated private document, let’s says <code>$ROOT/index-private</code>, linked with the public <code>$ROOT/index</code> document using the <code>rdfs:seeAlso</code> predicate.</p>
+   <h3 class="heading settled" data-level="2.2" id="product-discovery"><span class="secno">2.2. </span><span class="content">Discovery</span><a class="self-link" href="#product-discovery"></a></h3>
+   <p>TDB.</p>
+   <h2 class="heading settled" data-level="3" id="functional-products"><span class="secno">3. </span><span class="content">Functional products</span><a class="self-link" href="#functional-products"></a></h2>
+   <p>TBD.</p>
+   <h2 class="heading settled" data-level="4" id="technical-products"><span class="secno">4. </span><span class="content">Technical products</span><a class="self-link" href="#technical-products"></a></h2>
+   <p>TBD.</p>
+   <h2 class="heading settled" data-level="5" id="supplied-products"><span class="secno">5. </span><span class="content">Supplied products</span><a class="self-link" href="#supplied-products"></a></h2>
+   <p>A Solid SuppliedProduct follows the rules defined in the <a href="#generalities">§ 2 Generalities</a> section.</p>
+   <p>The RDF type of the SuppliedProduct is <code>dfc-b:SuppliedProduct</code>.</p>
+   <p>For instance a "tomato" SuppliedProduct would be stored at <em>https://alice.example.org/tomato/index</em>:</p>
+   <div class="example no-marker" id="example-supplied-product">
+    <a class="self-link" href="#example-supplied-product"></a>
+    <div class="marker">EXAMPLE: A Supplied Product document in turtle</div>
+<pre class="include-code highlight"><c- k>@prefix</c-> <c- nn>dfc-b:</c-> <c- g>&lt;https://github.com/datafoodconsortium/ontology/releases/latest/download/DFC_BusinessOntology.owl#></c-><c- p>.</c->
+
+<c- g>&lt;></c->
+    <c- b>a</c-> <c- nn>dfc-b</c-><c- p>:</c-><c- f>SuppliedProduct</c-><c- p>;</c->
+    <c- nn>dfc-b</c-><c- p>:</c-><c- f>name</c-> <c- s>"Tomato"</c-><c- p>.</c-></pre>
+   </div>
+   <h2 class="heading settled" data-level="6" id="localized-products"><span class="secno">6. </span><span class="content">Localized products</span><a class="self-link" href="#localized-products"></a></h2>
+   <p>TBD.</p>
+   <h2 class="heading settled" data-level="7" id="physical-products"><span class="secno">7. </span><span class="content">Physical products</span><a class="self-link" href="#physical-products"></a></h2>
+   <p>TBD.</p>
   </main>
   <div data-fill-with="conformance">
    <h2 class="no-ref no-num heading settled" id="w3c-conformance"><span class="content">Conformance</span><a class="self-link" href="#w3c-conformance"></a></h2>
@@ -424,8 +513,9 @@ about an entity that provides goods and/or services.</p>
    <dd>Dan Brickley; Ramanathan Guha. <a href="https://w3c.github.io/rdf-schema/spec/"><cite>RDF Schema 1.1</cite></a>. URL: <a href="https://w3c.github.io/rdf-schema/spec/">https://w3c.github.io/rdf-schema/spec/</a>
    <dt id="biblio-rfc2119">[RFC2119]
    <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
+  </dl>
+  <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
+  <dl>
    <dt id="biblio-solid-gsp">[SOLID-GSP]
    <dd>Maxime Lecoq-Gaillard. <a href="https://solid.github.io/erp/gsp.html"><cite>Solid GSP</cite></a>. URL: <a href="https://solid.github.io/erp/gsp.html">https://solid.github.io/erp/gsp.html</a>
-   <dt id="biblio-type-indexes">[TYPE-INDEXES]
-   <dd><a href="https://solid.github.io/type-indexes/"><cite>Type indexes</cite></a>. URL: <a href="https://solid.github.io/type-indexes/">https://solid.github.io/type-indexes/</a>
   </dl>
