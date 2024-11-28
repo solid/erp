@@ -1,0 +1,144 @@
+<pre class='metadata'>
+Title: Solid Goods and Services
+Shortname: solid-goods-services
+Level: 1
+Status: CG-DRAFT
+Group: solidcg
+Repository: solid/erp
+URL: http://example.com/url-this-spec-will-live-at
+Dark Mode: off
+Editor: Maxime Lecoq-Gaillard
+Abstract: This document is a Solid client-client protocol defining products and services stored in a Solid storage.
+Complain About: accidental-2119 yes, missing-example-ids yes
+Markup Shorthands: markdown yes, css no
+</pre>
+
+<pre class="biblio">
+{
+  "webid": {
+    "href": "https://www.w3.org/2005/Incubator/webid/spec/identity/",
+    "title": "WebID 1.0",
+    "authors": [
+        "Tim Berners-Lee",
+        "Henry Story",
+        "Andrei Sambra"
+    ]
+  },
+  "solid-webid-profile": {
+    "href": "https://solid.github.io/webid-profile/",
+    "title": "Solid WebID Profile",
+    "authors": [
+        "Tim Berners-Lee", 
+        "Sarven Capadisli",
+        "Virginia Balseiro",
+        "Timea Turdean",
+        "Jeff Zucker"
+    ]
+  },
+  "type-indexes": {
+    "href": "https://solid.github.io/type-indexes/",
+    "title": "Type indexes",
+    "contributors": [
+        "Tim Berners-Lee",
+        "Sarven Capadisli",
+        "Virginia Balseiro",
+        "Jeff Zucker"
+    ]
+  },
+  "solid-erp": {
+    "href": "https://solid.github.io/erp/",
+    "title": "Solid ERP",
+    "authors": [
+        "Maxime Lecoq-Gaillard"
+    ]
+  },
+  "solid-gsp": {
+    "href": "https://solid.github.io/erp/gsp.html",
+    "title": "Solid GSP",
+    "authors": [
+        "Maxime Lecoq-Gaillard"
+    ]
+  }
+}
+</pre>
+
+# Terminology # {#terminology}
+
+## Namespaces ## {#namespaces}
+
+<table>
+    <tr>
+        <th>Prefix</th>
+        <th>Namespace</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>rdf</td>
+        <td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td>
+        <td>[[!rdf-schema]]</td>
+    </tr>
+    <tr>
+        <td>foaf</td>
+        <td>http://xmlns.com/foaf/0.1/</td>
+        <td>[[!foaf]]</td>
+    </tr>
+    <tr>
+        <td>dfc-b</td>
+        <td>https://github.com/datafoodconsortium/ontology/releases/latest/download/DFC_BusinessOntology.owl#</td>
+        <td>[Data Food Consortium ontology](https://github.com/datafoodconsortium/ontology)</td>
+    </tr>
+</table>
+
+# Generalities # {#generalities}
+
+A Solid product is a object in a Solid storage (or POD) which holds data about 
+a product that can be provided by a Goods/Services Provider (GSP), see [[solid-gsp]].
+
+There are different types of products: [[#functional-products]], [[#technical-products]], 
+[[#supplied-products]], [[#localized-products]] and [[#physical-products]].
+
+Solid products are all built inside a single folder (LDP Container) in a Solid storage.
+Let us call the URI of that folder -- less its final '/' -- `$ROOT`. 
+It could be say, *https://alice.example.org/myProduct/*. Developers must never make assumptions 
+about where a Solid product is stored as users should be able to choose the location they want.
+
+The product object is defined in the `$ROOT/index` document.
+
+## Access rights ## {#product-access-rights}
+
+By default, the products container are private. When one wants to make a product public, private properties can still be defined in a separated private document, let's says `$ROOT/index-private`, linked with the public `$ROOT/index` document using the `rdfs:seeAlso` predicate.
+
+## Discovery ## {#product-discovery}
+
+TDB.
+
+# Functional products # {#functional-products}
+
+TBD.
+
+# Technical products # {#technical-products}
+
+TBD.
+
+# Supplied products # {#supplied-products}
+
+A Solid SuppliedProduct follows the rules defined in the [[#generalities]] section.
+
+The RDF type of the SuppliedProduct is `dfc-b:SuppliedProduct`. 
+
+For instance a "tomato" SuppliedProduct would be stored at *https://alice.example.org/tomato/index*:
+
+<div id="example-supplied-product" class="example" heading="A Supplied Product document in turtle">
+    <pre class="include-code">
+        path: ./examples/supplied-product.ttl
+        highlight: turtle
+    </pre>
+</div>
+
+# Localized products # {#localized-products}
+
+TBD.
+
+# Physical products # {#physical-products}
+
+TBD.

@@ -1,6 +1,6 @@
 <pre class='metadata'>
-Title: Solid ERP
-Shortname: solid-erp
+Title: Solid GSP
+Shortname: solid-gsp
 Level: 1
 Status: CG-DRAFT
 Group: solidcg
@@ -8,7 +8,7 @@ Repository: solid/erp
 URL: http://example.com/url-this-spec-will-live-at
 Dark Mode: off
 Editor: Maxime Lecoq-Gaillard
-Abstract: This work-in-progress Solid client-client set of protocols defines objects and rules to make interoperable apps to manage the activities of en entity that provides goods and/or services like a business or enterprise.
+Abstract: This document is a Solid client-client protocol defining an entity providing goods and/or services that is stored in a Solid storage.
 Complain About: accidental-2119 yes, missing-example-ids yes
 Markup Shorthands: markdown yes, css no
 </pre>
@@ -45,19 +45,15 @@ Markup Shorthands: markdown yes, css no
         "Jeff Zucker"
     ]
   },
-  "solid-gsp": {
-    "href": "https://solid.github.io/erp/gsp.html",
-    "title": "Solid GSP",
+  "solid-goods-services": {
+    "href": "https://solid.github.io/erp/goods-services.html",
+    "title": "Solid Goods and Services",
     "authors": [
         "Maxime Lecoq-Gaillard"
     ]
   }
 }
 </pre>
-
-# Caution # {#caution}
-
-This work is an active draft and should not be considered validated by the community.
 
 # Terminology # {#terminology}
 
@@ -86,10 +82,26 @@ This work is an active draft and should not be considered validated by the commu
     </tr>
 </table>
 
-# Goods/services provider # {#goods-services-provider}
+# GSP # {#goods-services-provider}
 
-The Solid Goods/Services Provider (GSP) [[!solid-gsp]] is a object in a Solid storage which holds data 
+A Solid Goods and/or Services Provider (GSP) is a object in a Solid storage which holds data 
 about an entity that provides goods and/or services.
+
+A Solid GSP is all built inside a single folder (LDP Container) in a Solid storage. 
+Let us call the URI of that folder -- less its final '/' -- `$ROOT`. 
+It could be say, *https://alice.example.org/myBusiness/*. Developers must never make assumptions 
+about where a Solid GSP is stored as users should be able to choose the location they want.
+
+The GSP object is defined in the `$ROOT/index` document. The RDF type of the GSP is `dfc-b:Enterprise`. 
+
+<div id="example-gsp" class="example" heading="A GSP document in turtle">
+    <pre class="include-code">
+        path: ./examples/gsp.ttl
+        highlight: turtle
+    </pre>
+</div>
+
+Other properties can be defined like listed in the GSP shape below (TBD).
 
 ## Access rights ## {#enterprise-access-rights}
 
@@ -98,3 +110,21 @@ By default, the GSP container is private. When one wants to make the GSP public,
 ## Discovery ## {#enterprise-discovery}
 
 Type indexes is the recommended mechanism to discover Solid GSP. The RDF class to register an instance of a Solid GSP is `dfc-b:Enterprise`. Type indexes MUST only register the GSPs owned by the WebId owner. See [[!type-indexes]].
+
+# Products and services # {#products-services}
+
+Solid products are defined in [[!solid-goods-services]].
+
+Supplied products are stored in the `$ROOT/supplied-products/` container.
+
+# Catalogs # {#catalogs}
+
+Supplied products are stored in the `$ROOT/catalogs/` container.
+
+# Third parties # {#third-parties}
+
+Supplied products are stored in the `$ROOT/third-parties/` container.
+
+# Orders # {#order}
+
+Supplied products are stored in the `$ROOT/orders/` container.
